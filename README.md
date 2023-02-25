@@ -1,3 +1,3 @@
-# parcel_preact_template
+# babylonjs_runner
 
-Template for creating a web app using parcel, preact, and vitest.
+Babylon.js common functionality wrapper and apps.
