@@ -1,10 +1,12 @@
+import "@babylonjs/loaders/legacy/legacy-glTF2";
+
 import { FreeCamera } from "@babylonjs/core/Cameras/freeCamera";
 import { Engine } from "@babylonjs/core/Engines/engine";
 import { HemisphericLight } from "@babylonjs/core/Lights/hemisphericLight";
 import { Vector3 } from "@babylonjs/core/Maths/math.vector";
 import { CreateGround } from "@babylonjs/core/Meshes/Builders/groundBuilder";
-import { CreateSphere } from "@babylonjs/core/Meshes/Builders/sphereBuilder";
 import { Scene } from "@babylonjs/core/scene";
+import { SceneLoader } from "@babylonjs/core/Loading/sceneLoader";
 
 import { GridMaterial } from "@babylonjs/materials/grid/gridMaterial";
 
@@ -36,13 +38,25 @@ light.intensity = 0.7;
 const material = new GridMaterial("grid", scene);
 
 // Our built-in 'sphere' shape.
-const sphere = CreateSphere("sphere1", { segments: 16, diameter: 2 }, scene);
+SceneLoader.ImportMeshAsync(
+  "",
+  "https://cxreiff.sfo3.cdn.digitaloceanspaces.com/models/",
+  "key.glb",
+  scene
+)
+  .then((result) => {
+    const key = result.meshes[0];
 
-// Move the sphere upward 1/2 its height
-sphere.position.y = 2;
+    // Affect a material
+    key.material = material;
 
-// Affect a material
-sphere.material = material;
+    // Render every frame
+    engine.runRenderLoop(() => {
+      key.rotate(new Vector3(0, 1, 0), 0.01);
+      scene.render();
+    });
+  })
+  .catch(console.log);
 
 // Our built-in 'ground' shape.
 const ground = CreateGround(
@@ -51,11 +65,7 @@ const ground = CreateGround(
   scene
 );
 
+ground.position.y = -1;
+
 // Affect a material
 ground.material = material;
-
-// Render every frame
-engine.runRenderLoop(() => {
-  sphere.rotate(new Vector3(0, 1, 0), 0.01);
-  scene.render();
-});
