@@ -1,4 +1,4 @@
-import "@babylonjs/loaders/legacy/legacy-glTF2";
+import "@babylonjs/loaders/glTF/2.0/glTFLoader";
 
 import { FreeCamera } from "@babylonjs/core/Cameras/freeCamera";
 import { Engine } from "@babylonjs/core/Engines/engine";
