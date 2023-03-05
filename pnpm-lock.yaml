@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@babylonjs/core': ^5.48.0
   '@babylonjs/gui': ^5.48.0
+  '@babylonjs/loaders': ^5.49.0
   '@babylonjs/materials': ^5.48.0
   '@parcel/core': ^2.8.3
   '@parcel/transformer-sass': ^2.8.3
@@ -22,6 +23,7 @@ specifiers:
 devDependencies:
   '@babylonjs/core': 5.48.0
   '@babylonjs/gui': 5.48.0_@babylonjs+core@5.48.0
+  '@babylonjs/loaders': 5.49.0_@babylonjs+core@5.48.0
   '@babylonjs/materials': 5.48.0_@babylonjs+core@5.48.0
   '@parcel/core': 2.8.3
   '@parcel/transformer-sass': 2.8.3_@parcel+core@2.8.3
@@ -69,6 +71,15 @@ packages:
     resolution: {integrity: sha512-1LiUQpGXNA3nPHH3vezZY9bdZpALTxAgxvQig2aDts2N7m4QB71U0piqzxn6dTIzhDFSLwQWpJHSSczbxWNgzQ==}
     peerDependencies:
       '@babylonjs/core': ^5.22.0
+    dependencies:
+      '@babylonjs/core': 5.48.0
+    dev: true
+
+  /@babylonjs/loaders/5.49.0_@babylonjs+core@5.48.0:
+    resolution: {integrity: sha512-jleQkRxYysTzmvztFgbjvc+2YD1nBP+trna5ot0ClZPlVifKVJGRPmd6NvFOjxzhrzcwNTxc1x91dwPhWl5Wvw==}
+    peerDependencies:
+      '@babylonjs/core': ^5.22.0
+      babylonjs-gltf2interface: ^5.22.0
     dependencies:
       '@babylonjs/core': 5.48.0
     dev: true

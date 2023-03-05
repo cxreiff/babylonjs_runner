@@ -26,6 +26,7 @@
   "devDependencies": {
     "@babylonjs/core": "^5.48.0",
     "@babylonjs/gui": "^5.48.0",
+    "@babylonjs/loaders": "^5.49.0",
     "@babylonjs/materials": "^5.48.0",
     "@parcel/core": "^2.8.3",
     "@parcel/transformer-sass": "^2.8.3",
