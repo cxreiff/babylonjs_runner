@@ -40,7 +40,7 @@ const material = new GridMaterial("grid", scene);
 // Our built-in 'sphere' shape.
 SceneLoader.ImportMeshAsync(
   "",
-  "https://cxreiff.sfo3.cdn.digitaloceanspaces.com/models/",
+  "https://assets.cxreiff.com/models/",
   "key.glb",
   scene
 )
